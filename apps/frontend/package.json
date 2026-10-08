@@ -7,9 +7,11 @@
   },
   "scripts": {
     "dev": "next dev -p 3001",
+    "dev:remote-api": "NEXT_PUBLIC_API_URL=https://api.develop.example.com next dev -p 3001",
     "build": "next build",
     "start": "next start -p 3001",
-    "tsc-check": "tsc --noEmit"
+    "tsc-check": "tsc --noEmit",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "next": "^16.0.0",
@@ -17,6 +19,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.58.2",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",

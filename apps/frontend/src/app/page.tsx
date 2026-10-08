@@ -5,7 +5,14 @@ export default function HomePage() {
     <main>
       <h1>FE clone test</h1>
       <p>Minimal Next.js frontend used to test merging repositories into a monorepo.</p>
-      <Link href="/models">Browse models</Link>
+      <ul>
+        <li>
+          <Link href="/models">Browse models</Link>
+        </li>
+        <li>
+          <Link href="/requests">Advisor requests</Link>
+        </li>
+      </ul>
     </main>
   );
 }

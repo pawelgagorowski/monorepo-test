@@ -11,7 +11,7 @@ export default async function ModelsPage() {
       <ul>
         {models.map((model) => (
           <li key={model.id}>
-            <Link href={`/models/${model.id}`}>{model.name}</Link> <RiskBadge riskLevel={model.riskLevel} />
+            <Link href={`/models/${model.id}`}>{model.name}</Link> <RiskBadge riskLevel={model.riskLevel} /> {model.status}
           </li>
         ))}
       </ul>
