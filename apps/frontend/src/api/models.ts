@@ -7,3 +7,5 @@ export type Model = {
 };
 
 export const getModels = () => apiGet<Model[]>("/models");
+
+export const getModel = (id: number) => apiGet<Model>(`/models/${id}`);
