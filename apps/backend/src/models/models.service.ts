@@ -9,8 +9,12 @@ export class ModelsService {
     { id: 3, name: 'Aggressive Equity', riskLevel: 'high' },
   ];
 
-  findAll(): Model[] {
-    return this.models;
+  findAll(search?: string): Model[] {
+    if (!search) {
+      return this.models;
+    }
+    const needle = search.toLowerCase();
+    return this.models.filter((model) => model.name.toLowerCase().includes(needle));
   }
 
   findOne(id: number): Model {

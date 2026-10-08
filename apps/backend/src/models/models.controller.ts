@@ -1,4 +1,4 @@
-import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe, Query } from '@nestjs/common';
 import { ModelsService } from './models.service';
 
 @Controller('models')
@@ -6,8 +6,8 @@ export class ModelsController {
   constructor(private readonly modelsService: ModelsService) {}
 
   @Get()
-  findAll() {
-    return this.modelsService.findAll();
+  findAll(@Query('search') search?: string) {
+    return this.modelsService.findAll(search);
   }
 
   @Get(':id')
