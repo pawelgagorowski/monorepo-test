@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Model } from './model.entity';
 
 @Injectable()
@@ -11,5 +11,13 @@ export class ModelsService {
 
   findAll(): Model[] {
     return this.models;
+  }
+
+  findOne(id: number): Model {
+    const model = this.models.find((candidate) => candidate.id === id);
+    if (!model) {
+      throw new NotFoundException(`Model ${id} not found`);
+    }
+    return model;
   }
 }
