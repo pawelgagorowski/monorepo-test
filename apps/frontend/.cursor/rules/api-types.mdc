@@ -1,0 +1,8 @@
+---
+description: Hand-written API types mirroring the backend
+globs: src/api/**/*.ts
+alwaysApply: false
+---
+
+- Every enum and response type in `src/api/` mirrors a BE type. Copy the values from the BE repository by hand.
+- Enum values are the display strings the BE returns (e.g. `"In Progress"`), not the keys.
