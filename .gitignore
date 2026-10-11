@@ -1,0 +1,9 @@
+node_modules/
+.turbo/
+*.tsbuildinfo
+
+.env
+.env.*
+!.env.template
+
+.DS_Store
