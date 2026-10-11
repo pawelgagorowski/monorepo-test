@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+CHANGED_FILES=$(git diff --name-only --diff-filter=ACMR "$(git merge-base develop HEAD)..HEAD" -- '*.ts' | grep -v '\.spec\.ts$' || true)
+
+if [ -z "$CHANGED_FILES" ]; then
+  echo "No changed .ts files found, skipping tests."
+  exit 0
+fi
+
+echo "$CHANGED_FILES" | xargs npx vitest related --run
