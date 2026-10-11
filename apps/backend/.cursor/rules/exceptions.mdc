@@ -1,0 +1,8 @@
+---
+description: Error handling in services
+globs: src/**/*.service.ts
+alwaysApply: false
+---
+
+- Throw Nest HTTP exceptions (`NotFoundException`, `ForbiddenException`) from services; controllers stay thin.
+- Access rules (e.g. Draft models are owner-only → 403) are enforced in the service.
