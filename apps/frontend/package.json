@@ -1,5 +1,5 @@
 {
-  "name": "fe-clone-test",
+  "name": "@cars/frontend",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -13,6 +13,7 @@
     "check-all": "npm test && biome check && npm run tsc-check",
     "start": "next start -p 3001",
     "tsc-check": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "lint": "biome lint .",
     "check": "biome check .",
     "check:fix": "biome check --write .",

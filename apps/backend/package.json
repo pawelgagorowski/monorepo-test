@@ -1,21 +1,23 @@
 {
-  "name": "be-clone-test",
+  "name": "@cars/backend",
   "version": "0.1.0",
   "private": true,
   "license": "UNLICENSED",
   "engines": {
-    "node": "22.x"
+    "node": "24.x"
   },
   "scripts": {
     "build": "nest build",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:prod": "node dist/main",
-    "lint": "eslint \"{src,test}/**/*.ts\" --fix",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"{src,test}/**/*.ts\" --max-warnings=0",
+    "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
     "lint-check": "eslint \"{src,test}/**/*.ts\" --max-warnings=0",
     "format": "prettier --write \"src/**/*.ts\"",
     "format-check": "prettier --check \"src/**/*.ts\"",
-    "test": "vitest",
+    "test": "vitest --passWithNoTests",
     "test:unit": "vitest run --passWithNoTests",
     "test:jest": "jest",
     "prepare": "husky install"
